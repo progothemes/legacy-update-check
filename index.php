@@ -10,11 +10,11 @@ $packages['direct'] = array(
 		'1.0.3' => array(
 			'version' => '1.0.3',
 			'date' => '2011-02-10',
-			'package' => 'http://www.ninthlink.net/direct.zip'
+			'package' => 'http://www.progothemes.com/direct.zip'
 		)
 	),
 	'info' => array(
-		'url' => 'http://www.progo.com'
+		'url' => 'http://www.progothemes.com'
 	)
 );
 
