@@ -7,8 +7,8 @@
 // Theme with update info
 $packages['direct'] = array(
 	'versions' => array(
-		'1.0.28' => array(
-			'version' => '1.0.28',
+		'1.0.29' => array(
+			'version' => '1.0.29',
 			'date' => '2011-02-10',
 			'package' => 'http://www.ninthlink.net/direct.zip'
 		)
