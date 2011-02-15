@@ -55,8 +55,8 @@ if ($action == 'theme_update') {
 	$update_data['url'] = $packages[$args->slug]['info']['url'];
 	
 	// we also want to log the Update Check against the DB ?
-	$db   = mysql_connect('localhost', 'ninthlin_wrd13', 'pxKj0zyRUQ') or die('Could not connect: ' . mysql_error());
-    mysql_select_db('ninthlin_wrd13') or die('Could not select database');
+	$db   = mysql_connect('localhost', 'ninthlin_progo', 'YE35KbLh9M') or die('Could not connect: ' . mysql_error());
+    mysql_select_db('ninthlin_progo') or die('Could not select database');
 	
 	$server_ip = $_SERVER['REMOTE_ADDR'];
 	$url = $args->siteurl;
