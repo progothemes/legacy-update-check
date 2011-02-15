@@ -39,30 +39,11 @@ $db   = mysql_connect('localhost', 'ninthlin_wrd13', 'pxKj0zyRUQ') or die('Could
 		}
 	}
 	
+	mysql_close($db);
+	
 	if ( $found != true ) {
-		// new entry
-		$sql  = "INSERT INTO progo_keys (";
-		$sql .= "ID,";
-		$sql .= "url,";
-		$sql .= "server_ip,";
-		$sql .= "api_key,";
-		$sql .= "user_agent,";
-		$sql .= "last_checked,";
-		$sql .= "auth_code";
-		$sql .= ") VALUES (";
-		$sql .= "NULL,";
-		$sql .= "'$url',";
-		$sql .= "'$server_ip',";
-		$sql .= "'$api_key',";
-		$sql .= "'$user_agent',";
-		$sql .= "'$currtime',";
-		$sql .= "'$auth_code'";
-		$sql .= ")";
-		
-		mysql_query($sql) || die("Invalid query: $sql<br>\n" . mysql_error());
 		$update_data['authcode'] = '999';
 	}
-	mysql_close($db);
 	
 	echo '<h1>Response Code #'. $update_data['authcode'] .' (';
 	switch($update_data['authcode']) {

@@ -113,7 +113,7 @@ if ($action == 'theme_update') {
 		mysql_close($db);
 	}
 	// and return the info for the WP site
-	if (version_compare($args->version, $latest_package['version'], '<'))
+	//if (version_compare($args->version, $latest_package['version'], '<'))
 		print serialize($update_data);
 }
 
