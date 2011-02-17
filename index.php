@@ -79,8 +79,13 @@ if ($action == 'theme_update') {
 			$upd = "UPDATE progo_keys SET last_checked = '$currtime' WHERE progo_keys.ID = $row[ID]";
 			mysql_query($upd) || die("Invalid query: $upd<br>\n" . mysql_error());
 			
-			if ( ( $row['url'] != '' ) && ( $row['url'] != $url ) ) {
+			if ( !in_array( $row['url'], array( '', 'newkey', $url ) ) ) {
 				$update_data['authcode'] = 300;
+			} elseif($row['url'] == 'newkey') {
+				$update_data['authcode'] = 100;
+				
+				$upd = "UPDATE progo_keys SET url = '$url', auth_code = '100', last_checked = '$currtime' WHERE progo_keys.ID = $row[ID]";
+				mysql_query($upd) || die("Invalid query: $upd<br>\n" . mysql_error());
 			} else {
 				$update_data['authcode'] = $row['auth_code'];
 			}
