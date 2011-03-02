@@ -17,12 +17,12 @@ $packages['direct'] = array(
 		'url' => 'http://www.progothemes.com'
 	)
 );
-$packages['secretasset'] = array(
+$packages['family'] = array(
 	'versions' => array(
 		'1.0.0' => array(
 			'version' => '1.0.0',
 			'date' => '2011-03-02',
-			'package' => 'http://www.progothemes.com/secretasset.zip'
+			'package' => 'http://www.progothemes.com/family.zip'
 		)
 	),
 	'info' => array(
