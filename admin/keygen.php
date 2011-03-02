@@ -100,7 +100,7 @@ elseif(isset($_GET['email'])) {
 	if(!isset($_SESSION['progokey2']) || $_SESSION['progokey2']=='') {
 		$_SESSION['progokey2'] = md5($email.':'.$currtime);
 	}
-	$api_key = md5(crypt("$email : $currtime"));
+	$api_key = md5(crypt("$email : $currtime : $theme"));
 	$nice_key = implode( '-', str_split( strtoupper( $api_key ), 4) );
 	echo "<h1>Here is a new API Key</h1><p>for<br /><strong>email address</strong> $email<br /><strong>created at</strong> $currtime</p>";
 	?>
