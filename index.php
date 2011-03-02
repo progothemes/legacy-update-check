@@ -17,6 +17,18 @@ $packages['direct'] = array(
 		'url' => 'http://www.progothemes.com'
 	)
 );
+$packages['secretasset'] = array(
+	'versions' => array(
+		'1.0.0' => array(
+			'version' => '1.0.0',
+			'date' => '2011-03-02',
+			'package' => 'http://www.progothemes.com/secretasset.zip'
+		)
+	),
+	'info' => array(
+		'url' => 'http://www.progothemes.com'
+	)
+);
 
 
 // Process API requests
@@ -61,6 +73,7 @@ if ($action == 'theme_update') {
 	$server_ip = $_SERVER['REMOTE_ADDR'];
 	$url = $args->siteurl;
 	$api_key = $_POST['api-key'];
+	$theme = $args->slug;
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	$currtime = date('Y-m-d H:i:s');
 	
@@ -100,6 +113,7 @@ if ($action == 'theme_update') {
 			$sql .= "url,";
 			$sql .= "server_ip,";
 			$sql .= "api_key,";
+			$sql .= "theme,";
 			$sql .= "user_agent,";
 			$sql .= "last_checked,";
 			$sql .= "auth_code";
@@ -108,6 +122,7 @@ if ($action == 'theme_update') {
 			$sql .= "'$url',";
 			$sql .= "'$server_ip',";
 			$sql .= "'$api_key',";
+			$sql .= "'$theme',";
 			$sql .= "'$user_agent',";
 			$sql .= "'$currtime',";
 			$sql .= "$update_data[authcode]";

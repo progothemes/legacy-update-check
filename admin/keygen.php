@@ -20,6 +20,7 @@ if(isset($_POST['createnew'])) {
 	$humankey = $_POST['humankey'];
 	$email = $_POST['email'];
 	$currtime = $_POST['currtime'];
+	$theme = $_POST['theme'];
 	
 	echo "<h1>you want to create a new entry in the db for API key $api_key</h1>";
 	
@@ -52,11 +53,12 @@ if(isset($_POST['createnew'])) {
 			while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 				$found++;
 				$url = $row[url];
+				$theme = $row[theme];
 			}
 			
 			if ( $found > 0 ) {
 				echo "<h1>THAT API KEY APPEARS TO BE ALREADY IN USE ON $found SITE". ($found>1 ? "S" : "") ."</h1>";
-				echo "<h2>site: $url</h2>";
+				echo "<h2>site: $url<br />theme: $theme</h2>";
 				echo "<p>for <a href='mailto:$email?subject=Your ProGoThemes API Key'>$email</a></p>";
 				echo "<input type='text' name='humankey' readonly='readonly' value='$humankey' size='50' onfocus='this.select();' />";
 			} else {
@@ -68,6 +70,7 @@ if(isset($_POST['createnew'])) {
 				$sql .= "url,";
 				$sql .= "server_ip,";
 				$sql .= "api_key,";
+				$sql .= "theme,";
 				$sql .= "user_agent,";
 				$sql .= "last_checked,";
 				$sql .= "auth_code";
@@ -76,6 +79,7 @@ if(isset($_POST['createnew'])) {
 				$sql .= "'$url',";
 				$sql .= "'$server_ip',";
 				$sql .= "'$api_key',";
+				$sql .= "'$theme',";
 				$sql .= "'$user_agent',";
 				$sql .= "'$currtime',";
 				$sql .= "$update_data[authcode]";
@@ -83,7 +87,7 @@ if(isset($_POST['createnew'])) {
 				
 				mysql_query($sql) || die("Invalid query: $sql<br>\n" . mysql_error());
 				
-				echo "<p>... key has been added to the DB. you should send the key<br /><br /><input type='text' name='humankey' readonly='readonly' value='$humankey' size='50' onfocus='this.select();' /><br /><br />to <a href='mailto:$email?subject=Your ProGoThemes API Key'>$email</a></p>";
+				echo "<p>... key has been added to the DB. you should send the key<br /><br /><input type='text' name='humankey' readonly='readonly' value='$humankey' size='50' onfocus='this.select();' /><br /><br />for ProGo Themes' <strong>$direct</strong> theme<br /><br />to <a href='mailto:$email?subject=Your ProGoThemes API Key'>$email</a></p>";
 			}
 			mysql_close($db);
 		}
@@ -91,6 +95,7 @@ if(isset($_POST['createnew'])) {
 }
 elseif(isset($_GET['email'])) {
 	$email = $_GET['email'];
+	$theme = $_GET['theme'];
 	$currtime = $_SESSION['progokeytime'];
 	if(!isset($_SESSION['progokey2']) || $_SESSION['progokey2']=='') {
 		$_SESSION['progokey2'] = md5($email.':'.$currtime);
@@ -103,6 +108,7 @@ elseif(isset($_GET['email'])) {
 <input type="hidden" name="createnew" value="1" />
 <input type="hidden" name="email" value="<?php echo $email; ?>" />
 <input type="hidden" name="currtime" value="<?php echo $currtime; ?>" />
+<input type="hidden" name="theme" value="<?php echo $theme; ?>" />
 <h3>API KEY for the DB</h3><input type='text' name="apikey" readonly='readonly' value='<?php echo $api_key ?>' size='50' onfocus='this.select();' />
 <h3>Human-Friendly API Key</h3><input type='text' name="humankey" readonly='readonly' value='<?php echo $nice_key ?>' size='50' onfocus='this.select();' />
 <p><input type="submit" value="submit" /></p>
@@ -116,9 +122,11 @@ elseif(isset($_GET['email'])) {
 } else {
 	$_SESSION['progokey2'] = '';
 	?>
-<h1>Enter an Email address below?</h1>
 <form action="keygen.php" method="get">
+<h1>Enter an Email address below?</h1>
 <p><input type="text" size="40" name="email" /></p>
+<h2>For which ProGo Theme?</h2>
+<p><select name="theme"><option value="direct">Direct Response</option><option value="secretasset">Secret Asset</option></select></p>
 <input type="submit" value="submit" />
 </form>
 <?php } ?>
