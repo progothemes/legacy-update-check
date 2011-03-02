@@ -17,7 +17,7 @@ $packages['direct'] = array(
 		'url' => 'http://www.progothemes.com'
 	)
 );
-$packages['family'] = array(
+$packages['bookit'] = array(
 	'versions' => array(
 		'1.0.0' => array(
 			'version' => '1.0.0',
