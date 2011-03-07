@@ -126,7 +126,7 @@ elseif(isset($_GET['email'])) {
 <h1>Enter an Email address below?</h1>
 <p><input type="text" size="40" name="email" /></p>
 <h2>For which ProGo Theme?</h2>
-<p><select name="theme"><option value="direct">Direct Response</option><option value="bookit">Book It (Secret Asset)</option></select></p>
+<p><select name="theme"><option value="direct">Direct Response</option><option value="realestate">Real Estate</option><option value="bookit">Book It (Secret Asset)</option></select></p>
 <input type="submit" value="submit" />
 </form>
 <?php } ?>

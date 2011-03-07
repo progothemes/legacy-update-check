@@ -22,7 +22,19 @@ $packages['bookit'] = array(
 		'1.0.0' => array(
 			'version' => '1.0.0',
 			'date' => '2011-03-02',
-			'package' => 'http://www.progothemes.com/family.zip'
+			'package' => 'http://www.progothemes.com/bookit.zip'
+		)
+	),
+	'info' => array(
+		'url' => 'http://www.progothemes.com'
+	)
+);
+$packages['realestate'] = array(
+	'versions' => array(
+		'1.0.0' => array(
+			'version' => '1.0.0',
+			'date' => '2011-03-07',
+			'package' => 'http://www.progothemes.com/realestate.zip'
 		)
 	),
 	'info' => array(
