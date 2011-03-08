@@ -7,26 +7,26 @@
 // Theme with update info
 $packages['direct'] = array(
 	'versions' => array(
-		'1.0.57' => array(
-			'version' => '1.0.57',
-			'date' => '2011-03-01',
-			'package' => 'http://www.progothemes.com/direct.zip'
+		'1.0.58' => array(
+			'version' => '1.0.58',
+			'date' => '2011-03-08',
+			'package' => 'http://www.progo.com/direct.zip'
 		)
 	),
 	'info' => array(
-		'url' => 'http://www.progothemes.com'
+		'url' => 'http://www.progo.com'
 	)
 );
 $packages['bookit'] = array(
 	'versions' => array(
 		'1.0.0' => array(
 			'version' => '1.0.0',
-			'date' => '2011-03-02',
-			'package' => 'http://www.progothemes.com/bookit.zip'
+			'date' => '2011-03-07',
+			'package' => 'http://www.progo.com/bookit.zip'
 		)
 	),
 	'info' => array(
-		'url' => 'http://www.progothemes.com'
+		'url' => 'http://www.progo.com'
 	)
 );
 $packages['realestate'] = array(
@@ -34,11 +34,11 @@ $packages['realestate'] = array(
 		'1.0.0' => array(
 			'version' => '1.0.0',
 			'date' => '2011-03-07',
-			'package' => 'http://www.progothemes.com/realestate.zip'
+			'package' => 'http://www.progo.com/realestate.zip'
 		)
 	),
 	'info' => array(
-		'url' => 'http://www.progothemes.com'
+		'url' => 'http://www.progo.com'
 	)
 );
 
