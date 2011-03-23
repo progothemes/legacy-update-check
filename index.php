@@ -8,8 +8,8 @@
 $packages['direct'] = array(
 	'versions' => array(
 		'1.0.59' => array(
-			'version' => '1.0.59',
-			'date' => '2011-03-21',
+			'version' => '1.0.60',
+			'date' => '2011-03-23',
 			'package' => 'http://www.progo.com/direct.zip'
 		)
 	),
