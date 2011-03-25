@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>testing the key check system</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@ $update_data = array();
 $db   = mysql_connect('localhost', 'progokeys', 'NFUh02y67U1') or die('Could not connect: ' . mysql_error());
     mysql_select_db('progokeys') or die('Could not select database');
 	$server_ip = $_SERVER['REMOTE_ADDR'];
-	$url = 'http://www.ninthlink.com/direct/';
+	$url = 'http://www.ninthlink.com/direct';
 	
 	
 	$currtime = date('Y-m-d H:i:s');
