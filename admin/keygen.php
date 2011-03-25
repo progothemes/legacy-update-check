@@ -39,8 +39,8 @@ if(isset($_POST['createnew'])) {
 */
 	} else { // aok
 		echo '<h2>YOU APPEAR TO BE AOK... LETS DO THIS!</h2>';
-		$db   = mysql_connect('localhost', 'ninthlin_progo', 'YE35KbLh9M') or die('Could not connect: ' . mysql_error());
-		mysql_select_db('ninthlin_progo') or die('Could not select database');
+		$db   = mysql_connect('localhost', 'progokeys', 'NFUh02y67U1') or die('Could not connect: ' . mysql_error());
+		mysql_select_db('progokeys') or die('Could not select database');
 		$server_ip = $_SERVER['SERVER_ADDR'];
 		$url = 'newkey';
 		$user_agent = $_SERVER['HTTP_USER_AGENT'];

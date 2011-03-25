@@ -9,8 +9,8 @@
 <?php
 // 8A54-F3DA-48C8-BE31-4690-5FE1-EDCF-A34A
 $update_data = array();
-$db   = mysql_connect('localhost', 'ninthlin_progo', 'YE35KbLh9M') or die('Could not connect: ' . mysql_error());
-    mysql_select_db('ninthlin_progo') or die('Could not select database');
+$db   = mysql_connect('localhost', 'progokeys', 'NFUh02y67U1') or die('Could not connect: ' . mysql_error());
+    mysql_select_db('progokeys') or die('Could not select database');
 	$server_ip = $_SERVER['REMOTE_ADDR'];
 	$url = 'http://www.ninthlink.com/direct/';
 	
