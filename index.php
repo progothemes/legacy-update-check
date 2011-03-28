@@ -41,6 +41,18 @@ $packages['realestate'] = array(
 		'url' => 'http://www.progo.com'
 	)
 );
+$packages['ecommerce'] = array(
+	'versions' => array(
+		'1.0.0' => array(
+			'version' => '1.0.0',
+			'date' => '2011-03-23',
+			'package' => 'http://www.progo.com/ecommerce.zip'
+		)
+	),
+	'info' => array(
+		'url' => 'http://www.progo.com'
+	)
+);
 
 
 // Process API requests
