@@ -7,9 +7,9 @@
 // Theme with update info
 $packages['direct'] = array(
 	'versions' => array(
-		'1.0.65' => array(
-			'version' => '1.0.65',
-			'date' => '2011-03-30',
+		'1.0.66' => array(
+			'version' => '1.0.66',
+			'date' => '2011-03-31',
 			'package' => 'http://www.progo.com/direct.zip'
 		)
 	),
@@ -19,9 +19,9 @@ $packages['direct'] = array(
 );
 $packages['bookit'] = array(
 	'versions' => array(
-		'1.0.0' => array(
-			'version' => '1.0.0',
-			'date' => '2011-03-07',
+		'1.0.1' => array(
+			'version' => '1.0.1',
+			'date' => '2011-03-31',
 			'package' => 'http://www.progo.com/bookit.zip'
 		)
 	),
@@ -31,9 +31,9 @@ $packages['bookit'] = array(
 );
 $packages['realestate'] = array(
 	'versions' => array(
-		'1.0.0' => array(
-			'version' => '1.0.0',
-			'date' => '2011-03-07',
+		'1.0.1' => array(
+			'version' => '1.0.1',
+			'date' => '2011-03-31',
 			'package' => 'http://www.progo.com/realestate.zip'
 		)
 	),
@@ -43,9 +43,9 @@ $packages['realestate'] = array(
 );
 $packages['ecommerce'] = array(
 	'versions' => array(
-		'1.0.0' => array(
-			'version' => '1.0.0',
-			'date' => '2011-03-23',
+		'1.0.1' => array(
+			'version' => '1.0.1',
+			'date' => '2011-03-31',
 			'package' => 'http://www.progo.com/ecommerce.zip'
 		)
 	),
