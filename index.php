@@ -7,10 +7,10 @@
 // Theme with update info
 $packages['direct'] = array(
 	'versions' => array(
-		'1.0.67' => array(
-			'version' => '1.0.67',
-			'date' => '2011-03-31',
-			'package' => 'http://www.progo.com/direct.zip'
+		'1.0.70' => array(
+			'version' => '1.0.70',
+			'date' => '2011-04-01',
+			'package' => 'http://www.progo.com/latest-releases/direct.zip'
 		)
 	),
 	'info' => array(
@@ -22,7 +22,7 @@ $packages['bookit'] = array(
 		'1.0.1' => array(
 			'version' => '1.0.1',
 			'date' => '2011-03-31',
-			'package' => 'http://www.progo.com/bookit.zip'
+			'package' => 'http://www.progo.com/latest-releases/bookit.zip'
 		)
 	),
 	'info' => array(
@@ -31,10 +31,10 @@ $packages['bookit'] = array(
 );
 $packages['realestate'] = array(
 	'versions' => array(
-		'1.0.1' => array(
-			'version' => '1.0.1',
-			'date' => '2011-03-31',
-			'package' => 'http://www.progo.com/realestate.zip'
+		'1.1.0' => array(
+			'version' => '1.1.0',
+			'date' => '2011-04-01',
+			'package' => 'http://www.progo.com/latest-releases/realestate.zip'
 		)
 	),
 	'info' => array(
@@ -43,10 +43,10 @@ $packages['realestate'] = array(
 );
 $packages['ecommerce'] = array(
 	'versions' => array(
-		'1.0.1' => array(
-			'version' => '1.0.1',
-			'date' => '2011-03-31',
-			'package' => 'http://www.progo.com/ecommerce.zip'
+		'1.0.2' => array(
+			'version' => '1.0.2',
+			'date' => '2011-04-01',
+			'package' => 'http://www.progo.com/latest-releases/ecommerce.zip'
 		)
 	),
 	'info' => array(
