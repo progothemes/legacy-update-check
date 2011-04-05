@@ -7,9 +7,9 @@
 // Theme with update info
 $packages['direct'] = array(
 	'versions' => array(
-		'1.0.71' => array(
-			'version' => '1.0.71',
-			'date' => '2011-04-01',
+		'1.0.72' => array(
+			'version' => '1.0.72',
+			'date' => '2011-04-04',
 			'package' => 'http://www.progo.com/latest-releases/direct.zip'
 		)
 	),
@@ -43,9 +43,9 @@ $packages['realestate'] = array(
 );
 $packages['ecommerce'] = array(
 	'versions' => array(
-		'1.0.2' => array(
-			'version' => '1.0.2',
-			'date' => '2011-04-01',
+		'1.0.3' => array(
+			'version' => '1.0.3',
+			'date' => '2011-04-04',
 			'package' => 'http://www.progo.com/latest-releases/ecommerce.zip'
 		)
 	),
