@@ -7,9 +7,9 @@
 // Theme with update info
 $packages['direct'] = array(
 	'versions' => array(
-		'1.0.72' => array(
-			'version' => '1.0.72',
-			'date' => '2011-04-04',
+		'1.0.73' => array(
+			'version' => '1.0.73',
+			'date' => '2011-04-06',
 			'package' => 'http://www.progo.com/latest-releases/direct.zip'
 		)
 	),
