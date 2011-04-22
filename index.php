@@ -53,6 +53,18 @@ $packages['ecommerce'] = array(
 		'url' => 'http://www.progo.com'
 	)
 );
+$packages['smallbusiness'] = array(
+	'versions' => array(
+		'1.0.6' => array(
+			'version' => '1.0.6',
+			'date' => '2011-04-22',
+			'package' => 'http://www.progo.com/latest-releases/smallbusiness.zip'
+		)
+	),
+	'info' => array(
+		'url' => 'http://www.progo.com'
+	)
+);
 
 
 // Process API requests
