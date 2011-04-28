@@ -1,5 +1,4 @@
 <?php 
-
 // Original Plugin & Theme API by Kaspars Dambis (kaspars@konstruktors.com)
 // Modified by Jeremy Clark http://clark-technet.com
 // Fixed by Alex Chousmith http://www.ninthlink.com/author/alex
@@ -45,7 +44,7 @@ $packages['ecommerce'] = array(
 	'versions' => array(
 		'1.0.7' => array(
 			'version' => '1.0.7',
-			'date' => '2011-04-25',
+			'date' => '2011-04-28',
 			'package' => 'http://www.progo.com/latest-releases/ecommerce.zip'
 		)
 	),
