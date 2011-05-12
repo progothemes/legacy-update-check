@@ -42,9 +42,9 @@ $packages['realestate'] = array(
 );
 $packages['ecommerce'] = array(
 	'versions' => array(
-		'1.0.7' => array(
-			'version' => '1.0.7',
-			'date' => '2011-04-28',
+		'1.0.8' => array(
+			'version' => '1.0.8',
+			'date' => '2011-05-11',
 			'package' => 'http://www.progo.com/latest-releases/ecommerce.zip'
 		)
 	),
