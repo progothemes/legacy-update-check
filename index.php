@@ -4,102 +4,50 @@
 // Fixed by Alex Chousmith http://www.ninthlink.com/author/alex
 
 // Theme with update info
-$packages['direct'] = array(
-	'versions' => array(
-		'1.0.80' => array(
-			'version' => '1.0.80',
-			'date' => '2011-05-17',
-			'package' => 'http://www.progo.com/latest-releases/direct.zip'
-		)
+$packages = array(
+	'direct' => array(
+		'latest' => '1.0.80',
+		'date' => '2011-05-17',
+		'info' => 'http://www.progo.com'
 	),
-	'info' => array(
-		'url' => 'http://www.progo.com'
-	)
-);
-$packages['bookit'] = array(
-	'versions' => array(
-		'1.0.1' => array(
-			'version' => '1.0.1',
-			'date' => '2011-03-31',
-			'package' => 'http://www.progo.com/latest-releases/bookit.zip'
-		)
+	'bookit' => array(
+		'latest' => '1.0.1',
+		'date' => '2011-03-31',
+		'info' => 'http://www.progo.com'
 	),
-	'info' => array(
-		'url' => 'http://www.progo.com'
-	)
-);
-$packages['realestate'] = array(
-	'versions' => array(
-		'1.1.0' => array(
-			'version' => '1.1.0',
-			'date' => '2011-04-01',
-			'package' => 'http://www.progo.com/latest-releases/realestate.zip'
-		)
+	'realestate' => array(
+		'latest' => '1.1.0',
+		'date' => '2011-04-01',
+		'info' => 'http://www.progo.com'
 	),
-	'info' => array(
-		'url' => 'http://www.progo.com'
-	)
-);
-$packages['ecommerce'] = array(
-	'versions' => array(
-		'1.0.9' => array(
-			'version' => '1.0.9',
-			'date' => '2011-05-23',
-			'package' => 'http://www.progo.com/latest-releases/ecommerce.zip'
-		)
+	'ecommerce' => array(
+		'latest' => '1.1.0',
+		'date' => '2011-05-27',
+		'info' => 'http://www.progo.com'
 	),
-	'info' => array(
-		'url' => 'http://www.progo.com'
-	)
-);
-$packages['smallbusiness'] = array(
-	'versions' => array(
-		'1.0.6' => array(
-			'version' => '1.0.6',
-			'date' => '2011-04-22',
-			'package' => 'http://www.progo.com/latest-releases/smallbusiness.zip'
-		)
-	),
-	'info' => array(
-		'url' => 'http://www.progo.com'
+	'smallbusiness' => array(
+		'latest' => '1.0.6',
+		'date' => '2011-04-22',
+		'info' => 'http://www.progo.com'
 	)
 );
 
 
 // Process API requests
-
 $action = $_POST['action'];
 $args = unserialize(stripcslashes($_POST['request']));
 
 if (is_array($args))
 	$args = array_to_object($args);
 
-$latest_package = array_shift($packages[$args->slug]['versions']);
-
-
-
-// basic_check
-
-if ($action == 'basic_check') {	
-	$update_info = array_to_object($latest_package);
-	$update_info->slug = $args->slug;
-	
-	if (version_compare($args->version, $latest_package['version'], '<'))
-		$update_info->new_version = $update_info->version;
-	
-	print serialize($update_info);
-}
-
 // theme_update
-
 if ($action == 'theme_update') {
-	$update_info = array_to_object($latest_package);
+	$latest_package = $packages[$args->slug];
 	
-	//$update_data = new stdClass;
 	$update_data = array();
-	$update_data['package'] = $update_info->package;	
-	$update_data['new_version'] = $update_info->version;
-	$update_data['url'] = $packages[$args->slug]['info']['url'];
+	$update_data['package'] = 'http://www.progo.com/latest-releases/'. $args->slug .'.zip';	
+	$update_data['new_version'] = $latest_package['latest'];
+	$update_data['url'] = $latest_package['info'];
 	
 	// we also want to log the Update Check against the DB ?
 	$db   = mysql_connect('localhost', 'progokeys', 'NFUh02y67U1') or die('Could not connect: ' . mysql_error());
@@ -169,10 +117,8 @@ if ($action == 'theme_update') {
 	}
 	// and return the info for the WP site
 	//if (version_compare($args->version, $latest_package['version'], '<'))
-		print serialize($update_data);
+	print serialize($update_data);
 }
-
-
 
 function array_to_object($array = array()) {
     if (empty($array) || !is_array($array))
@@ -183,5 +129,4 @@ function array_to_object($array = array()) {
             $data->{$akey} = $aval;
 	return $data;
 }
-
 ?>
