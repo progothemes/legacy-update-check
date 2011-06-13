@@ -99,7 +99,8 @@ if ($action == 'theme_update') {
 			$sql .= "theme,";
 			$sql .= "user_agent,";
 			$sql .= "last_checked,";
-			$sql .= "auth_code";
+			$sql .= "auth_code,";
+			$sql .= "wpec_id";
 			$sql .= ") VALUES (";
 			$sql .= "NULL,";
 			$sql .= "'$url',";
@@ -108,7 +109,8 @@ if ($action == 'theme_update') {
 			$sql .= "'$theme',";
 			$sql .= "'$user_agent',";
 			$sql .= "'$currtime',";
-			$sql .= "$update_data[authcode]";
+			$sql .= "$update_data[authcode],";
+			$sql .= "''";
 			$sql .= ")";
 			
 			mysql_query($sql) || die("Invalid query: $sql<br>\n" . mysql_error());
