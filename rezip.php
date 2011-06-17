@@ -101,7 +101,7 @@ foreach ( $themes as $theme ) {
 		echo 'Can not create Backup ZIP file<br />';
 	}
 	
-	// also rearchive the zips that people are able to download upon purchase...
+	// also rearchive the zips that people are able to download upon purchase from ProGo.com...
 	if(in_array($theme,array('direct','ecommerce'))) {
 		$filelist = $tempfilelist = array();
 		$allfilesize = 0;
@@ -113,6 +113,30 @@ foreach ( $themes as $theme ) {
 		
 		$zip = new ZipArchive;
 		if ($res=$zip->open('/home/admin/progo/wp-content/uploads/wpsc/downloadables/'.$backupfile,ZIPARCHIVE::CREATE) === TRUE) {
+			foreach($filelist as $key => $files) {
+				if (!is_file($files[79001])) //check file exists
+					continue;
+				$zip->addFile($files[79001], $files[79003]);
+			}
+			$zip->close();
+			echo 'Backup Zip file create done!<br />';
+		} else {
+			echo 'Can not create Backup ZIP file<br />';
+		}
+	}
+	
+	// also rearchive the zips that people are able to download upon purchase from ProGo.com/Direct...
+	if($theme == 'direct') {
+		$filelist = $tempfilelist = array();
+		$allfilesize = 0;
+		
+		_file_list_folder( $backupdir );
+		$filelist = tempcleanup( $tempfilelist );
+		
+		$tempfilelist=array();
+		
+		$zip = new ZipArchive;
+		if ($res=$zip->open('/home/admin/progo/direct/wp-content/uploads/wpsc/downloadables/'.$backupfile,ZIPARCHIVE::CREATE) === TRUE) {
 			foreach($filelist as $key => $files) {
 				if (!is_file($files[79001])) //check file exists
 					continue;
