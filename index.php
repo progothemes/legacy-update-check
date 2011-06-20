@@ -21,8 +21,8 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'ecommerce' => array(
-		'latest' => '1.1.22',
-		'date' => '2011-06-07',
+		'latest' => '1.1.23',
+		'date' => '2011-06-19',
 		'info' => 'http://www.progo.com'
 	),
 	'smallbusiness' => array(
