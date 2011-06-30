@@ -1,4 +1,13 @@
 <?php
+$ourthemes = array(
+	'direct' => 'Direct Response',
+	'ecommerce' => 'Ecommerce',
+	'businesspro' => 'Business Pro',
+	'realestate' => 'Real Estate',
+	'bookit' => 'Book It (Secret Asset)'
+);
+/************** EDIT BELOW THIS LINE AT YOUR OWN RISK **************/
+
 session_start();
 
 if(!isset($_SESSION['progokeytime'])) {
@@ -89,7 +98,7 @@ if(isset($_POST['createnew'])) {
 				
 				mysql_query($sql) || die("Invalid query: $sql<br>\n" . mysql_error());
 				
-				echo "<p>... key has been added to the DB. you should send the key<br /><br /><input type='text' name='humankey' readonly='readonly' value='$humankey' size='50' onfocus='this.select();' /><br /><br />for ProGo Themes' <strong>$direct</strong> theme<br /><br />to <a href='mailto:$email?subject=Your ProGoThemes API Key'>$email</a></p>";
+				echo "<p>... key has been added to the DB. you should send the key<br /><br /><input type='text' name='humankey' readonly='readonly' value='$humankey' size='50' onfocus='this.select();' /><br /><br />for ProGo Themes' <strong>$theme</strong> theme<br /><br />to <a href='mailto:$email?subject=Your ProGoThemes API Key'>$email</a></p>";
 			}
 			mysql_close($db);
 		}
@@ -128,7 +137,13 @@ elseif(isset($_GET['email'])) {
 <h1>Enter an Email address below?</h1>
 <p><input type="text" size="40" name="email" /></p>
 <h2>For which ProGo Theme?</h2>
-<p><select name="theme"><option value="direct">Direct Response</option><option value="ecommerce">Ecommerce</option><option value="smallbusiness">SmallBusiness</option><option value="realestate">Real Estate</option><option value="bookit">Book It (Secret Asset)</option></select></p>
+<p><select name="theme">
+<?php
+foreach( $ourthemes as $k => $v ) {
+	echo "<option value='$k'>$v</option>";
+}
+?>
+</select></p>
 <input type="submit" value="submit" />
 </form>
 <?php } ?>
