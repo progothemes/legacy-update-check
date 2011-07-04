@@ -27,7 +27,7 @@ $packages = array(
 	),
 	'businesspro' => array(
 		'latest' => '1.0.0',
-		'date' => '2011-06-30',
+		'date' => '2011-07-03',
 		'info' => 'http://www.progo.com'
 	)
 );
