@@ -6,8 +6,8 @@
 // Theme with update info
 $packages = array(
 	'direct' => array(
-		'latest' => '1.0.82',
-		'date' => '2011-07-26',
+		'latest' => '1.0.83',
+		'date' => '2011-08-18',
 		'info' => 'http://www.progo.com'
 	),
 	'bookit' => array(
