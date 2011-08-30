@@ -21,13 +21,13 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'ecommerce' => array(
-		'latest' => '1.1.28',
-		'date' => '2011-08-29',
+		'latest' => '1.1.29',
+		'date' => '2011-08-30',
 		'info' => 'http://www.progo.com'
 	),
 	'businesspro' => array(
-		'latest' => '1.0.5',
-		'date' => '2011-08-29',
+		'latest' => '1.0.6',
+		'date' => '2011-08-30',
 		'info' => 'http://www.progo.com'
 	)
 );
