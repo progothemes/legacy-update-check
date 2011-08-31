@@ -102,7 +102,7 @@ foreach ( $themes as $theme ) {
 	}
 	
 	// also rearchive the zips that people are able to download upon purchase from ProGo.com...
-	if(in_array($theme,array('direct','ecommerce'))) {
+	if(in_array($theme,array('direct','ecommerce','businesspro'))) {
 		$filelist = $tempfilelist = array();
 		$allfilesize = 0;
 		
