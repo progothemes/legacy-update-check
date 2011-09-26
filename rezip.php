@@ -12,16 +12,16 @@ $themes = array();
 
 if ( $dir = @opendir( $zippath ) ) {
 	//echo "dir open <br />";
-	while (($file = readdir( $dir ) ) !== false ) {
-		if ( in_array($file, array('.', '..','.svn') ) ) {
+	while ( ( $file = readdir( $dir ) ) !== false ) {
+		if ( in_array( $file, array( '.', '..', '.svn' ) ) ) {
 			//echo "skipping file $file <br />";
 			continue;
 		}
-		if ( !is_readable($zippath.$file) ) {
+		if ( !is_readable( $zippath . $file ) ) {
 			//echo "File or Folder is not readable: $folder$file<br />";
-		} elseif ( is_link($zippath.$file) ) {
+		} elseif ( is_link( $zippath . $file ) ) {
 			//echo "Link not followed: $folder$file<br />";
-		} elseif ( is_dir( $zippath.$file )) {
+		} elseif ( is_dir( $zippath . $file ) ) {
 			//echo "is_dir( $folder$file ) <br />";
 			$themes[] = $file;
 		}
@@ -32,7 +32,7 @@ sort($themes);
 
 function _file_list_folder( $folder = '', $levels = 100 ) {
 	global $tempfilelist, $allfilesize;
-	if( empty($folder) ) {
+	if( empty( $folder ) ) {
 		return false;
 	}
 	if( ! $levels ) {
@@ -40,20 +40,20 @@ function _file_list_folder( $folder = '', $levels = 100 ) {
 	}
 	if ( $dir = @opendir( $folder ) ) {
 		while (($file = readdir( $dir ) ) !== false ) {
-			if ( in_array($file, array('.', '..','.svn') ) ) {
+			if ( in_array( $file, array( '.', '..', '.svn' ) ) ) {
 				continue;
 			}
-			if ( !is_readable($folder.$file) ) {
+			if ( !is_readable( $folder . $file ) ) {
 				//echo "File or Folder is not readable: $folder$file<br />";
-			} elseif ( is_link($folder.$file) ) {
+			} elseif ( is_link( $folder . $file ) ) {
 				//echo "Link not followed: $folder$file<br />";
-			} elseif ( is_dir( $folder.$file )) {
+			} elseif ( is_dir( $folder . $file )) {
 				//echo "is_dir( $folder$file ) <br />";
-				_file_list_folder( $folder.$file.'/', $levels - 1 );
-			} elseif ( is_file( $folder.$file ) or is_executable($folder.$file) ) { //add file to filelist
+				_file_list_folder( $folder . $file .'/', $levels - 1 );
+			} elseif ( is_file( $folder . $file ) || is_executable($folder . $file) ) { //add file to filelist
 				//echo "is_file( $folder$file ) <br />";
-				$tempfilelist[]=$folder.$file;
-				$allfilesize=$allfilesize+filesize($folder.$file);
+				$tempfilelist[] = $folder . $file;
+				$allfilesize = $allfilesize + filesize( $folder . $file );
 			} else {
 				//echo "Is not a file or directory : $folder$file <br />";
 			}
@@ -65,12 +65,12 @@ function _file_list_folder( $folder = '', $levels = 100 ) {
 function tempcleanup( $templist ) {
 	global $zippath;
 	$fl = array();
-	$templist=array_unique($templist); //all files only one time in list
-	sort($templist);
+	$templist = array_unique( $templist ); //all files only one time in list
+	sort( $templist );
 	//echo '<pre>'. print_r($tempfilelist,true) .'</pre>';
 	//make file list
-	foreach ($templist as $files) 
-		$fl[]=array(79001=>$files,79003=>str_replace($zippath,'',$files));
+	foreach ( $templist as $files ) 
+		$fl[] = array( 79001 => $files, 79003 => str_replace( $zippath, '', $files ) );
 		
 	return $fl;
 }
@@ -86,14 +86,14 @@ foreach ( $themes as $theme ) {
 	_file_list_folder( $backupdir );
 	$filelist = tempcleanup( $tempfilelist );
 	
-	$tempfilelist=array();
+	$tempfilelist = array();
 	
 	$zip = new ZipArchive;
-	if ($res=$zip->open($zippath.$backupfile,ZIPARCHIVE::CREATE) === TRUE) {
-		foreach($filelist as $key => $files) {
-			if (!is_file($files[79001])) //check file exists
+	if ( $res = $zip->open( $zippath . $backupfile, ZIPARCHIVE::CREATE ) === TRUE ) {
+		foreach ( $filelist as $key => $files) {
+			if ( !is_file( $files[79001] ) ) //check file exists
 				continue;
-			$zip->addFile($files[79001], $files[79003]);
+			$zip->addFile( $files[79001], $files[79003] );
 		}
 		$zip->close();
 		echo 'Backup Zip file create done!<br />';
@@ -102,21 +102,21 @@ foreach ( $themes as $theme ) {
 	}
 	
 	// also rearchive the zips that people are able to download upon purchase from ProGo.com...
-	if(in_array($theme,array('direct','ecommerce','businesspro'))) {
+	if( in_array( $theme, array('direct', 'ecommerce', 'businesspro' ) ) ) {
 		$filelist = $tempfilelist = array();
 		$allfilesize = 0;
 		
 		_file_list_folder( $backupdir );
 		$filelist = tempcleanup( $tempfilelist );
 		
-		$tempfilelist=array();
+		$tempfilelist = array();
 		
 		$zip = new ZipArchive;
-		if ($res=$zip->open('/home/admin/progo/wp-content/uploads/wpsc/downloadables/'.$backupfile,ZIPARCHIVE::CREATE) === TRUE) {
-			foreach($filelist as $key => $files) {
-				if (!is_file($files[79001])) //check file exists
+		if ( $res = $zip->open( '/home/admin/progo/wp-content/uploads/wpsc/downloadables/'. $backupfile, ZIPARCHIVE::CREATE ) === TRUE ) {
+			foreach ( $filelist as $key => $files ) {
+				if ( !is_file( $files[79001] ) ) //check file exists
 					continue;
-				$zip->addFile($files[79001], $files[79003]);
+				$zip->addFile( $files[79001], $files[79003] );
 			}
 			$zip->close();
 			echo 'Backup Zip file create done!<br />';
@@ -133,14 +133,14 @@ foreach ( $themes as $theme ) {
 		_file_list_folder( $backupdir );
 		$filelist = tempcleanup( $tempfilelist );
 		
-		$tempfilelist=array();
+		$tempfilelist = array();
 		
 		$zip = new ZipArchive;
-		if ($res=$zip->open('/home/admin/progo/direct/wp-content/uploads/wpsc/downloadables/'.$backupfile,ZIPARCHIVE::CREATE) === TRUE) {
-			foreach($filelist as $key => $files) {
-				if (!is_file($files[79001])) //check file exists
+		if ( $res = $zip->open('/home/admin/progo/direct/wp-content/uploads/wpsc/downloadables/'. $backupfile, ZIPARCHIVE::CREATE ) === TRUE ) {
+			foreach ( $filelist as $key => $files ) {
+				if ( !is_file( $files[79001] ) ) //check file exists
 					continue;
-				$zip->addFile($files[79001], $files[79003]);
+				$zip->addFile( $files[79001], $files[79003] );
 			}
 			$zip->close();
 			echo 'Backup Zip file create done!<br />';
