@@ -16,7 +16,7 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'businesspro' => array(
-		'latest' => '1.2.3',
+		'latest' => '1.2.4',
 		'date' => '2011-10-06',
 		'info' => 'http://www.progo.com'
 	),
