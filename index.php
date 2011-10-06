@@ -6,18 +6,18 @@
 // Theme with update info
 $packages = array(
 	'direct' => array(
-		'latest' => '1.2.1',
-		'date' => '2011-09-27',
+		'latest' => '1.2.3',
+		'date' => '2011-10-06',
 		'info' => 'http://www.progo.com'
 	),
 	'ecommerce' => array(
-		'latest' => '1.2.2',
-		'date' => '2011-09-29',
+		'latest' => '1.2.3',
+		'date' => '2011-10-06',
 		'info' => 'http://www.progo.com'
 	),
 	'businesspro' => array(
-		'latest' => '1.2.2',
-		'date' => '2011-09-29',
+		'latest' => '1.2.3',
+		'date' => '2011-10-06',
 		'info' => 'http://www.progo.com'
 	),
 	'bookit' => array(
