@@ -11,13 +11,13 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'ecommerce' => array(
-		'latest' => '1.2.3',
-		'date' => '2011-10-06',
+		'latest' => '1.2.4',
+		'date' => '2011-11-07',
 		'info' => 'http://www.progo.com'
 	),
 	'businesspro' => array(
-		'latest' => '1.2.4',
-		'date' => '2011-10-06',
+		'latest' => '1.2.5',
+		'date' => '2011-11-07',
 		'info' => 'http://www.progo.com'
 	),
 	'bookit' => array(
