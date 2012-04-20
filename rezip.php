@@ -7,7 +7,7 @@
 
 <body>
 <?php
-$zippath = '/home/admin/progo/latest-releases/';
+$zippath = '/home/admin/progo.com/latest-releases/';
 $themes = array();
 
 if ( $dir = @opendir( $zippath ) ) {
@@ -112,7 +112,7 @@ foreach ( $themes as $theme ) {
 		$tempfilelist = array();
 		
 		$zip = new ZipArchive;
-		if ( $res = $zip->open( '/home/admin/progo/wp-content/uploads/wpsc/downloadables/'. $backupfile, ZIPARCHIVE::CREATE ) === TRUE ) {
+		if ( $res = $zip->open( '/home/admin/progo.com/wp-content/uploads/wpsc/downloadables/'. $backupfile, ZIPARCHIVE::CREATE ) === TRUE ) {
 			foreach ( $filelist as $key => $files ) {
 				if ( !is_file( $files[79001] ) ) //check file exists
 					continue;
@@ -136,7 +136,7 @@ foreach ( $themes as $theme ) {
 		$tempfilelist = array();
 		
 		$zip = new ZipArchive;
-		if ( $res = $zip->open('/home/admin/progo/direct/wp-content/uploads/wpsc/downloadables/'. $backupfile, ZIPARCHIVE::CREATE ) === TRUE ) {
+		if ( $res = $zip->open('/home/admin/progo.com/direct/wp-content/uploads/wpsc/downloadables/'. $backupfile, ZIPARCHIVE::CREATE ) === TRUE ) {
 			foreach ( $filelist as $key => $files ) {
 				if ( !is_file( $files[79001] ) ) //check file exists
 					continue;
