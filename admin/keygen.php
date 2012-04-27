@@ -123,7 +123,7 @@ elseif(isset($_GET['email'])) {
 <input type="hidden" name="currtime" value="<?php echo $currtime; ?>" />
 <input type="hidden" name="theme" value="<?php echo $theme; ?>" />
 <input type="hidden" name="apikey" value="<?php echo $api_key ?>" />
-<input type="text" name="humankey" value="<?php echo $nice_key ?>" />
+<input type="hidden" name="humankey" value="<?php echo $nice_key ?>" />
 <p><input type="submit" value="submit" /></p>
 </form>
 <p><a href="keygen.php">Change email address</a></p>
