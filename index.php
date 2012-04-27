@@ -5,7 +5,7 @@
 
 // Theme with update info
 $packages = array(
-	'direct' => array(
+	'businesspro' => array(
 		'latest' => '1.2.6',
 		'date' => '2012-04-20',
 		'info' => 'http://www.progo.com?p=397'
@@ -15,10 +15,15 @@ $packages = array(
 		'date' => '2012-04-20',
 		'info' => 'http://www.progo.com?p=397'
 	),
-	'businesspro' => array(
+	'direct' => array(
 		'latest' => '1.2.6',
 		'date' => '2012-04-20',
 		'info' => 'http://www.progo.com?p=397'
+	),
+	'jhtdwp' => array(
+		'latest' => '0.0.2',
+		'date' => '2012-04-27',
+		'info' => 'http://www.progo.com'
 	),
 	'bookit' => array(
 		'latest' => '1.0.1',

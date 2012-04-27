@@ -1,8 +1,9 @@
 <?php
 $ourthemes = array(
-	'direct' => 'Direct Response',
-	'ecommerce' => 'Ecommerce',
 	'businesspro' => 'Business Pro',
+	'ecommerce' => 'Ecommerce',
+	'direct' => 'Direct Response',
+	'jhtdwp' => 'JHT DWP',
 	'realestate' => 'Real Estate',
 	'bookit' => 'Book It (Secret Asset)'
 );
@@ -22,6 +23,7 @@ if(!isset($_SESSION['progokeytime'])) {
 </head>
 
 <body>
+<p><img src="http://www.progo.com/wp-content/themes/progodotcom/images/logo_progo.png" alt="ProGo Themes" /></p>
 <?php
 
 if(isset($_POST['createnew'])) {
@@ -31,7 +33,7 @@ if(isset($_POST['createnew'])) {
 	$currtime = $_POST['currtime'];
 	$theme = $_POST['theme'];
 	
-	echo "<h1>you want to create a new entry in the db for API key $api_key</h1>";
+	echo "<h1>Saving your key<span style='display:none'>$api_key</span> in the DB</h1>";
 	
 	$hashcheck = md5($email.':'.$currtime);
 	if(!isset($_SESSION['progokey2'])) {
@@ -47,7 +49,7 @@ if(isset($_POST['createnew'])) {
 <?php
 */
 	} else { // aok
-		echo '<h2>YOU APPEAR TO BE AOK... LETS DO THIS!</h2>';
+		echo '<h2>AUTHENTICATION SUCCESSFUL...</h2>';
 		$db   = mysql_connect('localhost', 'progokeys', 'NFUh02y67U1') or die('Could not connect: ' . mysql_error());
 		mysql_select_db('progokeys') or die('Could not select database');
 		$server_ip = $_SERVER['SERVER_ADDR'];
@@ -98,7 +100,7 @@ if(isset($_POST['createnew'])) {
 				
 				mysql_query($sql) || die("Invalid query: $sql<br>\n" . mysql_error());
 				
-				echo "<p>... key has been added to the DB. you should send the key<br /><br /><input type='text' name='humankey' readonly='readonly' value='$humankey' size='50' onfocus='this.select();' /><br /><br />for ProGo Themes' <strong>$theme</strong> theme<br /><br />to <a href='mailto:$email?subject=Your ProGoThemes API Key'>$email</a></p>";
+				echo "<p>Success! Here is your new key:<br /><br /><input type='text' name='humankey' readonly='readonly' value='$humankey' size='50' onfocus='this.select();' /><br /><br />for ProGo Themes' <strong>$theme</strong> theme<br /><br />... which you might want to email to <a href='mailto:$email?subject=Your ProGoThemes API Key'>$email</a>?</p>";
 			}
 			mysql_close($db);
 		}
@@ -113,15 +115,15 @@ elseif(isset($_GET['email'])) {
 	}
 	$api_key = md5(crypt("$email : $currtime : $theme"));
 	$nice_key = implode( '-', str_split( strtoupper( $api_key ), 4) );
-	echo "<h1>Here is a new API Key</h1><p>for<br /><strong>email address</strong> $email<br /><strong>created at</strong> $currtime</p>";
+	echo "<h1>Please confirm the information below</h1><p><strong>email address</strong> $email<br /><strong>created at</strong> $currtime</p>";
 	?>
 <form action="keygen.php" method="post">
 <input type="hidden" name="createnew" value="1" />
 <input type="hidden" name="email" value="<?php echo $email; ?>" />
 <input type="hidden" name="currtime" value="<?php echo $currtime; ?>" />
 <input type="hidden" name="theme" value="<?php echo $theme; ?>" />
-<h3>API KEY for the DB</h3><input type='text' name="apikey" readonly='readonly' value='<?php echo $api_key ?>' size='50' onfocus='this.select();' />
-<h3>Human-Friendly API Key</h3><input type='text' name="humankey" readonly='readonly' value='<?php echo $nice_key ?>' size='50' onfocus='this.select();' />
+<input type="hidden" name="apikey" value="<?php echo $api_key ?>" />
+<input type="text" name="humankey" value="<?php echo $nice_key ?>" />
 <p><input type="submit" value="submit" /></p>
 </form>
 <p><a href="keygen.php">Change email address</a></p>
