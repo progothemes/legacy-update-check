@@ -6,9 +6,9 @@
 // Theme with update info
 $packages = array(
 	'businesspro' => array(
-		'latest' => '1.3.0',
-		'date' => '2012-08-31',
-		'info' => 'http://www.progo.com'
+		'latest' => '1.3.1',
+		'date' => '2012-10-08',
+		'info' => 'http://www.progo.com/?p=430'
 	),
 	'ecommerce' => array(
 		'latest' => '1.2.6',
