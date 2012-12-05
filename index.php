@@ -21,8 +21,8 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'jhtdwp' => array(
-		'latest' => '1.1.5',
-		'date' => '2012-11-30',
+		'latest' => '1.1.6',
+		'date' => '2012-12-05',
 		'info' => 'http://www.progo.com'
 	),
 	'bookit' => array(
