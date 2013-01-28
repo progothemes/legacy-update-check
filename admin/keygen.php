@@ -4,6 +4,7 @@ $ourthemes = array(
 	'ecommerce' => 'Ecommerce',
 	'direct' => 'Direct Response',
 	'jhtdwp' => 'JHT DWP',
+	'sundancedwp' => 'Sundance Spas DWP',
 	'realestate' => 'Real Estate',
 	'bookit' => 'Book It (Secret Asset)'
 );
