@@ -26,7 +26,7 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'sundancedwp' => array(
-		'latest' => '1.0.2',
+		'latest' => '1.0.3',
 		'date' => '2013-02-14',
 		'info' => 'http://www.progo.com'
 	),
