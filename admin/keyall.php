@@ -14,18 +14,16 @@ mysql_select_db('progokeys') or die('Could not select database');
 
 	// given the API key, look for existing entry...
 	$found = false;
-	$query = "SELECT * FROM progo_keys ORDER BY theme ASC";
+	$query = "SELECT * FROM progo_keys ORDER BY theme ASC, url ASC";
 	$result = mysql_query($query);
 	
 	echo '<table><thead><tr><th>#</th></tr></thead><tbody>';
 	$i = 0;
 	while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-		$found = true;
-		
 		$theme = isset( $row['theme'] ) ? $row['theme'] : '';
 		$url = isset( $row['url'] ) ? $row['url'] : '';
 		
-		echo '<tr><td>'. $i .'</td><td>'. $theme .'</td><td>'. $url .'</td></tr>';
+		echo '<tr><td>'. $i++ .'</td><td>'. $theme .'</td><td>'. $url .'</td></tr>';
 	}
 	echo '</tbody></table>';
 	
