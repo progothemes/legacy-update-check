@@ -17,7 +17,7 @@ mysql_select_db('progokeys') or die('Could not select database');
 	$query = "SELECT * FROM progo_keys ORDER BY theme ASC, url ASC";
 	$result = mysql_query($query);
 	
-	echo '<table><thead><tr><th>#</th></tr></thead><tbody>';
+	echo '<table><thead><tr><th>#</th><th>theme</th><th>url</th></tr></thead><tbody>';
 	$i = 0;
 	while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 		$theme = isset( $row['theme'] ) ? $row['theme'] : '';
