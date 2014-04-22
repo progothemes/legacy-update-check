@@ -26,8 +26,8 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'sundancedwp' => array(
-		'latest' => '1.0.5',
-		'date' => '2013-05-14',
+		'latest' => '1.0.6',
+		'date' => '2014-04-22',
 		'info' => 'http://www.progo.com'
 	),
 	'bookit' => array(
