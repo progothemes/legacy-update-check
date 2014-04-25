@@ -21,13 +21,13 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'jhtdwp' => array(
-		'latest' => '1.2.4',
-		'date' => '2014-04-22',
+		'latest' => '1.2.5',
+		'date' => '2014-04-25',
 		'info' => 'http://www.progo.com'
 	),
 	'sundancedwp' => array(
-		'latest' => '1.0.7',
-		'date' => '2014-04-22',
+		'latest' => '1.0.8',
+		'date' => '2014-04-25',
 		'info' => 'http://www.progo.com'
 	),
 	'bookit' => array(
