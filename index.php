@@ -21,7 +21,7 @@ $packages = array(
 		'info' => 'http://www.progo.com'
 	),
 	'jhtdwp' => array(
-		'latest' => '1.3.2',
+		'latest' => '1.3.3',
 		'date' => '2014-05-07',
 		'info' => 'http://www.progo.com'
 	),
